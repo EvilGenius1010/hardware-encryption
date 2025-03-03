@@ -1,0 +1,33 @@
+# Use Ubuntu as base image
+FROM ubuntu:latest
+
+# Install dependencies required for Quartus & GUI
+RUN apt-get update && apt-get install -y \
+    wget unzip xz-utils \
+    libxext6 libxrender1 libxtst6 libxi6 \
+    x11-apps xauth \
+    x11vnc xvfb \
+    fluxbox dbus-x11 \
+    libgtk2.0-0 libglib2.0-bin weston xwayland x11vnc dbus-x11 
+
+# Create directory for Quartus installation
+RUN mkdir -p /opt/intel
+
+
+# Set working directory
+WORKDIR /opt/intel
+
+# Install xauth for X11 forwarding
+RUN apt-get update && apt-get install -y xauth
+
+# Set DISPLAY variable (Will be set when running the container)
+ENV DISPLAY=:0
+
+# Expose VNC Port (Only if using VNC)
+EXPOSE 5901
+
+#create volume
+VOLUME /opt
+
+# Entry script to start X11 or VNC
+CMD ["/bin/bash"]
