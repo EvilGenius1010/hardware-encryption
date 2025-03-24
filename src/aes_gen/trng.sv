@@ -16,6 +16,8 @@ module trng #(
     logic [TRNG_BITS-1:0] entropy_pool;
     logic [7:0] entropy_count;
     
+    
+//comm
     typedef enum logic [1:0] {
         IDLE,
         COLLECT,
