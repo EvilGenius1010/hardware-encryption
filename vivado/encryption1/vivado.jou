@@ -1,0 +1,74 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Mar 25 18:16:55 2025
+# Process ID: 22708
+# Current directory: D:/Hardware Encryption/hardware-encryption/vivado/encryption1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25048 D:\Hardware Encryption\hardware-encryption\vivado\encryption1\encryption1.xpr
+# Log file: D:/Hardware Encryption/hardware-encryption/vivado/encryption1/vivado.log
+# Journal file: D:/Hardware Encryption/hardware-encryption/vivado/encryption1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.xpr}
+update_compile_order -fileset sources_1
+file mkdir D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new
+file mkdir D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new
+file mkdir D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new
+file mkdir D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new
+file mkdir D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+file mkdir D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new
+file mkdir {D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new}
+close [ open {D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new/tb_mixcolumns.sv} w ]
+add_files -fileset sim_1 {{D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new/tb_mixcolumns.sv}}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+close [ open {D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/rcon_pkg.sv} w ]
+add_files {{D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/rcon_pkg.sv}}
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim
+launch_simulation
+source tb_mixcolumns.tcl
+close_sim

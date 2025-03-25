@@ -1,0 +1,1 @@
+-wto "ef09e650e20a4ad19f57862ae02f9032" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "tb_mixcolumns_behav" "xil_defaultlib.tb_mixcolumns" "xil_defaultlib.glbl" -log "elaborate.log" 

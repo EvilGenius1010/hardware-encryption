@@ -1,5 +1,6 @@
 
- (* rom_style = "block" *)  reg [7:0] sbox [0:15][0:15];
+// (* rom_style = "block" *) 
+  logic [7:0] sbox [0:15][0:15];
 
 initial begin
   sbox[0][0] = 8'h63; sbox[0][1] = 8'h7c; sbox[0][2] = 8'h77; sbox[0][3] = 8'h7b;

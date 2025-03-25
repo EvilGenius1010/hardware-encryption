@@ -1,0 +1,20 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Test case 2: Non-zero values
+mixedcolumns[          0] = ef
+mixedcolumns[          1] = ef
+mixedcolumns[          2] = ef
+mixedcolumns[          3] = ef
+mixedcolumns[          4] = ef
+mixedcolumns[          5] = ef
+mixedcolumns[          6] = ef
+mixedcolumns[          7] = ef
+mixedcolumns[          8] = ef
+mixedcolumns[          9] = ef
+mixedcolumns[         10] = ef
+mixedcolumns[         11] = ef
+mixedcolumns[         12] = ef
+mixedcolumns[         13] = ef
+mixedcolumns[         14] = ef
+mixedcolumns[         15] = ef
+$finish called at time : 20 ns : File "D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sim_1/new/tb_mixcolumns.sv" Line 84
