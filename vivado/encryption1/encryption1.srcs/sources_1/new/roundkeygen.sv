@@ -129,7 +129,7 @@
 module calculate_round_keys(output reg [`ROUND_KEYS_LEN-1:0] round_keys [`ROUND_KEYS_GEN-1:0]);
     
 
-    `include "sbox_pkg.sv"
+    `include "sbox.sv"
     import sbox_pkg::*; 
 
     reg [0:255] key256 = 256'h_000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f;

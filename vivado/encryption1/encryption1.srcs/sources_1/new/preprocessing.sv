@@ -35,4 +35,4 @@ input logic[127:0] master_key
 
     assign processed_text = initial_key ^ initial_key;
     
-
+endmodule

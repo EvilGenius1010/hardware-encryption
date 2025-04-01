@@ -2,59 +2,276 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Mar 27 00:39:31 2025
-# Process ID: 33316
-# Current directory: D:/Hardware Encryption/hardware-encryption/vivado/encryption1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15408 D:\Hardware Encryption\hardware-encryption\vivado\encryption1\encryption1.xpr
-# Log file: D:/Hardware Encryption/hardware-encryption/vivado/encryption1/vivado.log
-# Journal file: D:/Hardware Encryption/hardware-encryption/vivado/encryption1\vivado.jou
+# Start of session at: Sat Mar 29 19:29:04 2025
+# Process ID: 5036
+# Current directory: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17044 D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.xpr
+# Log file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/vivado.log
+# Journal file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.xpr}
+open_project {D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1'
+INFO: [Project 1-313] Project file moved from 'D:/Hardware Encryption/hardware-encryption/vivado/encryption1' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
-open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:12 . Memory (MB): peak = 1036.070 ; gain = 0.000
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
 update_compile_order -fileset sources_1
-add_files -norecurse {{D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv}}
-WARNING: [filemgmt 56-12] File 'D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv' cannot be added to the project because it already exists in the project, skipping this file
+add_files -norecurse {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv}}
+WARNING: [filemgmt 56-12] File 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv' cannot be added to the project because it already exists in the project, skipping this file
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {{D:/Hardware encryption project/tb_subbytes.sv}}
+update_compile_order -fileset sim_1
 launch_simulation
 Command: launch_simulation 
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-54] Inspecting design source files for 'tb_roundkeygen' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj tb_roundkeygen_vlog.prj"
-INFO: [Common 17-41] Interrupt caught. Command should exit soon.
-run_program: Time (s): cpu = 00:00:07 ; elapsed = 00:01:12 . Memory (MB): peak = 1036.070 ; gain = 0.000
-INFO: [Common 17-344] 'run_program' was cancelled
-INFO: [Vivado 12-5357] 'compile' step aborted
-launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:01:13 . Memory (MB): peak = 1036.070 ; gain = 0.000
-INFO: [Common 17-344] 'launch_simulation' was cancelled
-add_files -norecurse {{D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/CONSTANTS.vh}}
-WARNING: [filemgmt 56-12] File 'D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/CONSTANTS.vh' cannot be added to the project because it already exists in the project, skipping this file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module subbytes
+ERROR: [VRFC 10-4982] syntax error near 'package' [../../../../encryption1.srcs/sources_1/new/sbox.sv:57]
+ERROR: [VRFC 10-2790] SystemVerilog keyword package used in incorrect context [../../../../encryption1.srcs/sources_1/new/sbox.sv:57]
+ERROR: [VRFC 10-4982] syntax error near 'endpackage' [../../../../encryption1.srcs/sources_1/new/sbox.sv:84]
+ERROR: [VRFC 10-2790] SystemVerilog keyword endpackage used in incorrect context [../../../../encryption1.srcs/sources_1/new/sbox.sv:84]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+export_ip_user_files -of_objects  [get_files {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv}}] -no_script -reset -force -quiet
+remove_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv}}
+add_files -norecurse {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv}}
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+set_property source_mgmt_mode DisplayOnly [current_project]
 launch_simulation
 Command: launch_simulation 
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-54] Inspecting design source files for 'tb_roundkeygen' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj tb_roundkeygen_vlog.prj"
-INFO: [Common 17-41] Interrupt caught. Command should exit soon.
-run_program: Time (s): cpu = 00:00:07 ; elapsed = 00:00:36 . Memory (MB): peak = 1036.070 ; gain = 0.000
-INFO: [Common 17-344] 'run_program' was cancelled
-INFO: [Vivado 12-5357] 'compile' step aborted
-launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:36 . Memory (MB): peak = 1036.070 ; gain = 0.000
-INFO: [Common 17-344] 'launch_simulation' was cancelled
-add_files -norecurse {{D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv}}
-WARNING: [filemgmt 56-12] File 'D:/Hardware Encryption/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/sbox.sv' cannot be added to the project because it already exists in the project, skipping this file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/preprocessing.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module preprocessing
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module subbytes
+ERROR: [VRFC 10-4982] syntax error near 'typedef' [../../../../encryption1.srcs/sources_1/new/sbox.sv:58]
+ERROR: [VRFC 10-2790] SystemVerilog keyword typedef used in incorrect context [../../../../encryption1.srcs/sources_1/new/sbox.sv:58]
+ERROR: [VRFC 10-4982] syntax error near ''' [../../../../encryption1.srcs/sources_1/new/sbox.sv:80]
+ERROR: [VRFC 10-2865] package 'sbox_pkg' ignored due to previous errors [../../../../encryption1.srcs/sources_1/new/sbox.sv:60]
+ERROR: [VRFC 10-4982] syntax error near 'always_comb' [D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv:51]
+ERROR: [VRFC 10-2790] SystemVerilog keyword always_comb used in incorrect context [D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv:51]
+ERROR: [VRFC 10-41] module instantiations in compilation scope are not allowed [D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv:44]
+ERROR: [VRFC 10-4982] syntax error near '=' [D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv:54]
+ERROR: [VRFC 10-4982] syntax error near '=' [D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv:56]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_roundkeygen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_roundkeygen_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/preprocessing.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module preprocessing
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module subbytes
+ERROR: [VRFC 10-4982] syntax error near 'package' [../../../../encryption1.srcs/sources_1/new/sbox.sv:57]
+ERROR: [VRFC 10-2790] SystemVerilog keyword package used in incorrect context [../../../../encryption1.srcs/sources_1/new/sbox.sv:57]
+ERROR: [VRFC 10-4982] syntax error near 'endpackage' [../../../../encryption1.srcs/sources_1/new/sbox.sv:84]
+ERROR: [VRFC 10-2790] SystemVerilog keyword endpackage used in incorrect context [../../../../encryption1.srcs/sources_1/new/sbox.sv:84]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top tb_subbytes [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\subbytes.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\sbox.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\preprocessing.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption1\encryption1.srcs\sources_1\new\abc.vh:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\Hardware encryption project\tb_subbytes.sv:]
+ERROR: [Common 17-180] Spawn failed: No error
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_subbytes' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
+INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_subbytes_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/preprocessing.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module preprocessing
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.srcs/sources_1/new/subbytes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module subbytes
+ERROR: [VRFC 10-4982] syntax error near 'package' [../../../../encryption1.srcs/sources_1/new/sbox.sv:57]
+ERROR: [VRFC 10-2790] SystemVerilog keyword package used in incorrect context [../../../../encryption1.srcs/sources_1/new/sbox.sv:57]
+ERROR: [VRFC 10-4982] syntax error near 'endpackage' [../../../../encryption1.srcs/sources_1/new/sbox.sv:84]
+ERROR: [VRFC 10-2790] SystemVerilog keyword endpackage used in incorrect context [../../../../encryption1.srcs/sources_1/new/sbox.sv:84]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/encryption1.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Vivado 12-106] *** Exception: java.lang.NegativeArraySizeException (See D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/vivado_pid5036.debug)
+ERROR: [Vivado 12-106] *** Exception: java.lang.NegativeArraySizeException (See D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption1/vivado_pid5036.debug)
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 27 00:51:58 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 29 19:50:53 2025...

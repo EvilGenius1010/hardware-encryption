@@ -1,0 +1,5 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+00112233445566778899aabbccddeeff is plaintext and 7ffe0d0c0b0a09080706050403020100 is mkey
+At time                    0, processed_text = 68bb890dbfe6426841992d0fb054bb16
+$finish called at time : 10 ns : File "D:/Hardware encryption project/tb_subbytes.sv" Line 45

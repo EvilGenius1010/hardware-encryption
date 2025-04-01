@@ -1,8 +1,15 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  --include "../../../../encryption1.srcs/sources_1/new" \
-"../../../../encryption1.srcs/sources_1/new/sbox.sv" \
+"../../../../encryption1.srcs/sources_1/new/preprocessing.sv" \
+"../../../../encryption1.srcs/sources_1/new/subbytes.sv" \
 "../../../../encryption1.srcs/sources_1/new/roundkeygen.sv" \
+"../../../../encryption1.srcs/sources_1/new/shiftrows.sv" \
+"../../../../encryption1.srcs/sources_1/new/mixcolumns.sv" \
+"../../../../encryption1.srcs/sources_1/new/rcon_pkg.sv" \
+"../../../../encryption1.srcs/sources_1/new/sbox.sv" \
 "../../../../encryption1.srcs/sim_1/new/tb_roundkeygen.sv" \
+"../../../../encryption1.srcs/sim_1/new/tb_mixcolumns.sv" \
+"../../../../../../../../../tb_subbytes.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

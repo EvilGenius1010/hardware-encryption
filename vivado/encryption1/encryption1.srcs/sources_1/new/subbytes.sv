@@ -24,6 +24,7 @@
 //input clk,
 //input logic[127:0] master_key 
 
+`include "sbox.sv"
 
 module subbytes(
 input logic [127:0] plaintext,
@@ -37,8 +38,8 @@ endmodule
 //the preprocessed text
 logic [127:0] processed_text,
 
-`include "sbox.vh"
-
+//`include "sbox.vh"
+//`include "sbox.sv"
 
 //instantiate preprocessed module
 preprocessing preprocessed_data(
