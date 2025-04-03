@@ -1,5 +1,14 @@
 Vivado Simulator 2020.1
 Time resolution is 1 ps
-00112233445566778899aabbccddeeff is plaintext and 7ffe0d0c0b0a09080706050403020100 is mkey
-At time                    0, processed_text = 68bb890dbfe6426841992d0fb054bb16
-$finish called at time : 10 ns : File "D:/Hardware encryption project/tb_subbytes.sv" Line 45
+Input Matrix (After SubBytes):
+00  01  02  03
+10  11  12  13
+20  21  22  23
+30  31  32  33
+
+Output Matrix (After ShiftRows):
+00  01  02  03
+11  12  13  10
+22  23  20  21
+33  30  31  32
+$finish called at time : 20 ns : File "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sim_1/new/tb_shiftrows.sv" Line 40

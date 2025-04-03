@@ -1,39 +1,5 @@
 `timescale 1ns / 1ps
-////////////////////////////////////////////////////////////////////////////////////
-//// Company: 
-//// Engineer: 
-//// 
-//// Create Date: 21.03.2025 23:54:44
-//// Design Name: 
-//// Module Name: roundkeygen
-//// Project Name: 
-//// Target Devices: 
-//// Tool Versions: 
-//// Description: 
-//// 
-//// Dependencies: 
-//// 
-//// Revision:
-//// Revision 0.01 - File Created
-//// Additional Comments:
-//// 
-////////////////////////////////////////////////////////////////////////////////////
 
-
-//module calculate_round_keys(
-
-//    );
-//`include "CONSTANTS.vh"  
-////`include "RCONSTANTS.vh" 
-//sbox_impl();
-
-
-//reg [0:255] key256 = 256'h_000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f; //remove once other code 
-//reg [`ROUND_KEYS_LEN-1:0] round_keys[`ROUND_KEYS_GEN-1:0]; // 14 roundkeys generated each of length 128 
-
-//reg [0:`WORDS_LEN-1] words[0:`WORDS-1];
-
-//integer i,j;
 //reg[7:0] result; 
 
 ////first 8 words are each 32 bits in order derived from the random key generated.
@@ -125,26 +91,23 @@
 //    end
 
 //endmodule
-`include "CONSTANTS.vh"
-module calculate_round_keys(output reg [`ROUND_KEYS_LEN-1:0] round_keys [`ROUND_KEYS_GEN-1:0]);
-    
 
-    `include "sbox.sv"
+    `include "CONSTANTS.vh"
+    import rcon_pkg::*;
     import sbox_pkg::*; 
 
-    reg [0:255] key256 = 256'h_000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f;
-    reg [0:`WORDS_LEN-1] words[0:`WORDS-1];
+
+module calculate_round_keys(
+input logic[`KEY_WIDTH-1:0] key256,
+output logic [`ROUND_KEYS_LEN-1:0] round_keys [`ROUND_KEYS_GEN-1:0]
+);
+
+//    logic [0:255] key256 = 256'h_000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f;
+    logic [`WORDS_LEN-1:0] words[`WORDS-1:0];
 
     integer i, j;
-    reg [7:0] result;
+    logic [7:0] result;
     
-    // Declare and initialize RCON
-    reg [31:0] rcon [0:9] = '{
-        32'h01000000, 32'h02000000, 32'h04000000, 32'h08000000, 
-        32'h10000000, 32'h20000000, 32'h40000000, 32'h80000000, 
-        32'h1B000000, 32'h36000000
-    };
-
     // First 8 words initialization
     initial begin
         for (i = 0; i < 8; i = i + 1) begin 
@@ -157,11 +120,12 @@ module calculate_round_keys(output reg [`ROUND_KEYS_LEN-1:0] round_keys [`ROUND_
         for (i = 8; i < 60; i = i + 1) begin
             if (i % 8 == 0) begin
                 // RotWord - Circular Left Shift of 32-bit word
+                $monitor("%d \n",words[i]);
                 words[i] = {words[i-1][23:0], words[i-1][31:24]}; // Proper RotWord
                 
                 // Apply S-Box Substitution
                 for (j = 0; j < 4; j = j + 1) begin
-                    result = sbox_lookup(words[i][j*8 +: 4], words[i][(j*8+4) +: 4]); 
+                    result = sbox[words[i][j*8 +: 4]][words[i][(j*8+4) +: 4]]; 
                     words[i][j*8 +: 8] = result;
                 end
                 
@@ -171,7 +135,7 @@ module calculate_round_keys(output reg [`ROUND_KEYS_LEN-1:0] round_keys [`ROUND_
             else if (i % 4 == 0) begin
                 // Apply S-Box substitution for every 4th word
                 for (j = 0; j < 4; j = j + 1) begin
-                    result = sbox_lookup(words[i-1][j*8 +: 4], words[i-1][(j*8+4) +: 4]); 
+                    result = sbox[words[i-1][(j*8+4) +: 4]][words[i-1][j*8 +: 4]]; 
                     words[i][j*8 +: 8] = result;
                 end
             end 

@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Apr  2 01:33:31 2025
+# Process ID: 8752
+# Current directory: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8380 D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\encryption_2\encryption_2.xpr
+# Log file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/vivado.log
+# Journal file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.xpr}
+
+update_compile_order -fileset sources_1
