@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Apr  4 16:35:22 2025
+# Process ID: 15572
+# Current directory: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17324 D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\Encyption_intpipelined\Encyption_intpipelined.xpr
+# Log file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/vivado.log
+# Journal file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/Encyption_intpipelined.xpr}
+update_compile_order -fileset sources_1
+set_property is_enabled true [get_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/aes_256_pipeline.sv}}]
+set_property is_enabled true [get_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/aes_256_top.sv}}]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/aes_256_top.sv}}]
+set_property is_enabled false [get_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/aes_256_pipeline.sv}}]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_roundkeygen.tcl
+close_sim

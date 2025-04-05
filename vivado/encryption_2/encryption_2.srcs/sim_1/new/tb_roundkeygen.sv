@@ -1,26 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 26.03.2025 23:19:25
-// Design Name: 
-// Module Name: tb_roundkeygen
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
-`timescale 1ns / 1ps
 
 module tb_roundkeygen;
     
@@ -46,7 +24,7 @@ module tb_roundkeygen;
         #200; // Ensure computation is done
 
         // Display the generated round keys
-        for (i = 0; i < `ROUND_KEYS_GEN; i = i + 1) begin
+        for (i = 0; i < 15; i = i + 1) begin
             $display("Round Key %0d: %h", i, round_keys_tb[i]); 
         end
         

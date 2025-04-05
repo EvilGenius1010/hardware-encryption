@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Apr  4 15:52:54 2025
+# Process ID: 23700
+# Current directory: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25936 D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\Encyption_intpipelined\Encyption_intpipelined.xpr
+# Log file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/vivado.log
+# Journal file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/Encyption_intpipelined.xpr}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source aes_256_pipeline_tb.tcl
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+source aes_256_pipeline_tb.tcl
+close_sim

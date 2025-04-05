@@ -1,0 +1,119 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Apr  4 16:35:22 2025
+# Process ID: 15572
+# Current directory: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17324 D:\Hardware encryption project\hardware-encryption\vivado\hardware-encryption\vivado\Encyption_intpipelined\Encyption_intpipelined.xpr
+# Log file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/vivado.log
+# Journal file: D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/Encyption_intpipelined.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined'
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/Encyption_intpipelined.srcs/sources_1'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.1/data/ip'.
+update_compile_order -fileset sources_1
+set_property is_enabled true [get_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/aes_256_pipeline.sv}}]
+set_property is_enabled true [get_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/aes_256_top.sv}}]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/aes_256_top.sv}}]
+set_property is_enabled false [get_files  {{D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/aes_256_pipeline.sv}}]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/Encyption_intpipelined.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_roundkeygen' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/Encyption_intpipelined.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_roundkeygen_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/RCON.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/sb.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/roundkey_gen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module calculate_round_keys
+WARNING: [VRFC 10-3824] variable 't' must explicitly be declared as automatic or static [D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sources_1/new/roundkey_gen.sv:31]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sim_1/new/tb_roundkeygen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_roundkeygen
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/Encyption_intpipelined.sim/sim_1/behav/xsim'
+"xelab -wto 9e3cca297dd44db4a1e92527782fd1f5 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_roundkeygen_behav xil_defaultlib.tb_roundkeygen xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto 9e3cca297dd44db4a1e92527782fd1f5 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_roundkeygen_behav xil_defaultlib.tb_roundkeygen xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.sbox_pkg
+Compiling package xil_defaultlib.rcon_pkg
+Compiling module xil_defaultlib.calculate_round_keys
+Compiling module xil_defaultlib.tb_roundkeygen
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_roundkeygen_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source D:/Hardware -notrace
+couldn't read file "D:/Hardware": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Fri Apr  4 16:38:48 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/Encyption_intpipelined/Encyption_intpipelined.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_roundkeygen_behav -key {Behavioral:sim_1:Functional:tb_roundkeygen} -tclbatch {tb_roundkeygen.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source tb_roundkeygen.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting Round Key Generation Test
+Round Key 0: xX00020406080a0c0e10121416181a1c
+Round Key 1: 1e20222426282a2c2e30323436383a3c
+Round Key 2: xX80e901xX88e30dxX98f119xX80eb05
+Round Key 3: 1eedcb4f38c5e16316f5d35720cde96b
+Round Key 4: xX9e96b6xX1675bbxX8e84a2xX0e6fa7
+Round Key 5: 1e466313268382703076512710bbb84c
+Round Key 6: xXf2bf7cxXe4cac7xX6a4e65xX6421c2
+Round Key 7: 1e059e3638861c4608f04d61184bf52d
+Round Key 8: xX1467d1xXf0ad16xX9ae373xXfec2b1
+Round Key 9: 1ebebbfe2638a7b82ec8ead936831ff4
+Round Key 10: xXd4d8d4xX2475c2xXbe96b1xX405400
+Round Key 11: 1eb79b9d388f3c251647d6fc20c4c908
+Round Key 12: xX09e863xX2d9da1xX930b10xXd35f10
+Round Key 13: 1ed15457265e68723019be8e10dd7786
+Round Key 14: xXfcaca9xXd13108xX423a18xX916508
+$stop called at time : 200 ns : File "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sim_1/new/tb_roundkeygen.sv" Line 54
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_roundkeygen_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1045.824 ; gain = 9.555
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  4 16:39:52 2025...

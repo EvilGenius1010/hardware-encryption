@@ -1,0 +1,4 @@
+Running: xsim.dir/aes_256_pipeline_tb_behav/xsimk.exe -simmode gui -wdb aes_256_pipeline_tb_behav.wdb -simrunnum 0 -socket 51813
+Design successfully loaded
+Design Loading Memory Usage: 7660 KB (Peak: 7660 KB)
+Design Loading CPU Usage: 0 ms

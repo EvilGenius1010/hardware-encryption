@@ -1,0 +1,23 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.43876",
+   "Default View_TopLeft":"735,-395",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace inst microblaze_0 -pg 1 -lvl 2 -x 940 -y -90 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 940 -y -320 -defaultsOSRD
+preplace inst axi_timer_0 -pg 1 -lvl 1 -x 590 -y -310 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1350 -y -330 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 940 -y 120 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 590 -y -50 -defaultsOSRD
+preplace inst my_axi_peripheral_0 -pg 1 -lvl 3 -x 1350 -y -70 -defaultsOSRD
+preplace netloc clk_wiz_0_clk_out1 1 1 1 710 -80n
+levelinfo -pg 1 -100 590 940 1350 1470
+pagesize -pg 1 -db -bbox -sgen -100 -790 1470 900
+"
+}
+{
+   "da_board_cnt":"12",
+   "da_clkrst_cnt":"3"
+}

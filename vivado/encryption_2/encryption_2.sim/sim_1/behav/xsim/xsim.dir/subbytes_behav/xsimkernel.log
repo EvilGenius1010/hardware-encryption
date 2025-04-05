@@ -1,7 +1,7 @@
-Running: xsim.dir/subbytes_behav/xsimk.exe -simmode gui -wdb subbytes_behav.wdb -simrunnum 0 -socket 58737
+Running: xsim.dir/subbytes_behav/xsimk.exe -simmode gui -wdb subbytes_behav.wdb -simrunnum 0 -socket 55348
 Design successfully loaded
-Design Loading Memory Usage: 7516 KB (Peak: 7516 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 7004 KB (Peak: 7004 KB)
+Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 8208 KB (Peak: 8208 KB)
+Simulation Memory Usage: 7668 KB (Peak: 7668 KB)
 Simulation CPU Usage: 15 ms

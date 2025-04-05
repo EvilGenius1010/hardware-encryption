@@ -2,7 +2,7 @@
 
 package rcon_pkg;
 
-(* rom_style = "block" *) parameter [7:0] rcon [9:0] = {
+(* rom_style = "block" *) parameter [7:0] rcon [0:9] = '{
   8'h01,  
   8'h02,  
   8'h04,  
