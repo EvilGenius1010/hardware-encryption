@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../decryption_2.srcs/sources_1/new" \
+"../../../../decryption_2.srcs/sources_1/new/inv_shiftrows.sv" \
+"../../../../decryption_2.srcs/sim_1/new/tb_inv_shiftrows.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,24 +1,8 @@
 `timescale 1ns / 1ps
 
-/////
-
-
-
-/////
-
-//input with correct values 
-
-
-
-/////
-
-
-
-///////
-
 package inv_sbox_pkg;
 
-    // Inverse S-Box Lookup Table (Rijndael standard)
+    // Corrected to have 16 rows and 16 columns
     localparam bit [7:0] inv_sbox [16][16] = '{
         '{8'h52, 8'h09, 8'h6a, 8'hd5, 8'h30, 8'h36, 8'ha5, 8'h38, 8'hbf, 8'h40, 8'ha3, 8'h9e, 8'h81, 8'hf3, 8'hd7, 8'hfb},
         '{8'h7c, 8'he3, 8'h39, 8'h82, 8'h9b, 8'he0, 8'h46, 8'h0c, 8'h8e, 8'h2e, 8'ha1, 8'h66, 8'h28, 8'hd9, 8'h24, 8'hb2},
@@ -33,9 +17,10 @@ package inv_sbox_pkg;
         '{8'h1c, 8'hd1, 8'h85, 8'h4c, 8'ha9, 8'h9c, 8'hc5, 8'h8d, 8'h5d, 8'hd7, 8'h5a, 8'ha2, 8'h6f, 8'h49, 8'h4a, 8'h6c},
         '{8'h8d, 8'h4b, 8'h6d, 8'h5c, 8'h9d, 8'h1a, 8'hf8, 8'h86, 8'h6e, 8'h47, 8'h87, 8'hc9, 8'hba, 8'hd4, 8'hde, 8'h94},
         '{8'h61, 8'h99, 8'h9c, 8'hd2, 8'h5d, 8'h69, 8'h47, 8'hfd, 8'h50, 8'h83, 8'h3e, 8'h7b, 8'hf8, 8'h40, 8'hb5, 8'h62},
-        '{8'h0d, 8'h0a, 8'h7d, 8'hf1, 8'h43, 8'hfd, 8'h10, 8'h15, 8'h39, 8'hdc, 8'h24, 8'h90, 8'hb8, 8'h0d, 8'h69, 8'h9e}
-    };
+        '{8'h0d, 8'h0a, 8'h7d, 8'hf1, 8'h43, 8'hfd, 8'h10, 8'h15, 8'h39, 8'hdc, 8'h24, 8'h90, 8'hb8, 8'h0d, 8'h69, 8'h9e},
+        '{8'ha0,8'he0,8'h3b,8'h4d,8'hae,8'h2a,8'hf5,8'hb0,8'hc8,8'heb,8'hbb,8'h3c,8'h83,8'h53,8'h99,8'h61},
+        '{8'h17,8'h2b,8'h04,8'h7e,8'hba,8'h77,8'hd6,8'h26,8'he1,8'h69,8'h14,8'h63,8'h55,8'h21,8'h0c,8'h7d}
 
-  
+    };
 
 endpackage
