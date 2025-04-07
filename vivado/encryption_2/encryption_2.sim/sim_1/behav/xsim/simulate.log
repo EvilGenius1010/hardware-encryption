@@ -1,14 +1,19 @@
 Vivado Simulator 2020.1
 Time resolution is 1 ps
-Input Matrix (After SubBytes):
-00  01  02  03
-10  11  12  13
-20  21  22  23
-30  31  32  33
-
-Output Matrix (After ShiftRows):
-00  01  02  03
-11  12  13  10
-22  23  20  21
-33  30  31  32
-$finish called at time : 20 ns : File "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sim_1/new/tb_shiftrows.sv" Line 40
+Starting Round Key Generation Test
+Round Key 0: 1c1d1e1f18191a1b1415161710111213
+Round Key 1: 0c0d0e0f08090a0b0405060700010203
+Round Key 2: cdaa1a7cd5b30067c1a61670d1b70463
+Round Key 3: a82c070aa0250d01a4200b06a4210905
+Round Key 4: 84ca49aa517949cd90df5fbd41685bde
+Round Key 5: 5268d25ff24ddf5e566dd458f24cdd5d
+Round Key 6: d80b4abf8972037219ad5ccf58c50711
+Round Key 7: c52283dd376f5c83610288db934e5586
+Round Key 8: 91f70fad18850cdf0128501059ed5701
+Round Key 9: ef3f1e17d8504294b952ca4f2a1c9fc9
+Round Key 10: f96ed197e1ebdd48e0c38d58b92eda59
+Round Key 11: fba78b3d23f7c9a99aa503e6b0b99c2f
+Round Key 12: e5b358bc045885f4e49b08ac5db5d2f5
+Round Key 13: f89e53f2db699a5b41cc99bdf1750592
+Round Key 14: bae0fd7cbeb878885a2370240796a2d1
+$stop called at time : 200 ns : File "D:/Hardware Encryption/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sim_1/new/tb_roundkeygen.sv" Line 54

@@ -92,69 +92,6 @@
 
 //endmodule
 
-    `include "CONSTANTS.vh"
-    import rcon_pkg::*;
-    import sbox_pkg::*; 
-
-
-module calculate_round_keys(
-input logic[`KEY_WIDTH-1:0] key256,
-output logic [`ROUND_KEYS_LEN-1:0] round_keys [`ROUND_KEYS_GEN-1:0]
-);
-
-//    logic [0:255] key256 = 256'h_000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f;
-    logic [`WORDS_LEN-1:0] words[`WORDS-1:0];
-
-    integer i, j;
-    logic [7:0] result;
-    
-    // First 8 words initialization
-    initial begin
-        for (i = 0; i < 8; i = i + 1) begin 
-            words[i] = key256[i*32 +: 32];
-        end
-    end
-
-    // Key Expansion Process
-    initial begin
-        for (i = 8; i < 60; i = i + 1) begin
-            if (i % 8 == 0) begin
-                // RotWord - Circular Left Shift of 32-bit word
-                $monitor("%d \n",words[i]);
-                words[i] = {words[i-1][23:0], words[i-1][31:24]}; // Proper RotWord
-                
-                // Apply S-Box Substitution
-                for (j = 0; j < 4; j = j + 1) begin
-                    result = sbox[words[i][j*8 +: 4]][words[i][(j*8+4) +: 4]]; 
-                    words[i][j*8 +: 8] = result;
-                end
-                
-                // XOR with RCON (only the first byte)
-                words[i][31:24] = words[i][31:24] ^ rcon[i/8][31:24];
-            end 
-            else if (i % 4 == 0) begin
-                // Apply S-Box substitution for every 4th word
-                for (j = 0; j < 4; j = j + 1) begin
-                    result = sbox[words[i-1][(j*8+4) +: 4]][words[i-1][j*8 +: 4]]; 
-                    words[i][j*8 +: 8] = result;
-                end
-            end 
-            else begin
-                // Normal XOR for other words
-                words[i] = words[i-1] ^ words[i-8];
-            end
-        end
-    end
-
-    // Assign words to round keys
-    initial begin
-        for (i = 0; i < `ROUND_KEYS_GEN; i = i + 1) begin
-            round_keys[i] = {words[i*4], words[i*4+1], words[i*4+2], words[i*4+3]};
-        end
-    end
-
-endmodule
-
 
 
 
@@ -226,4 +163,59 @@ endmodule
 //    end
 
 //endmodule
+
+`include "CONSTANTS.vh"
+import rcon_pkg::*;
+import sbox_pkg::*; 
+
+module calculate_round_keys(
+    input logic [`KEY_WIDTH-1:0] key256,
+    output logic [`ROUND_KEYS_LEN-1:0] round_keys [`ROUND_KEYS_GEN-1:0]
+);
+
+    logic [`WORDS_LEN-1:0] words[`WORDS-1:0];
+    integer i, j;
+    logic [7:0] result;
+
+    initial begin
+        // Initialize first 8 words from key
+        for (i = 0; i < 8; i++) begin 
+            words[i] = key256[i*32 +: 32];
+        end
+
+        // Key expansion for i >= 8
+        for (i = 8; i < 60; i++) begin
+            if (i % 8 == 0) begin
+                // RotWord and SubWord
+                logic [31:0] temp;
+                temp = {words[i-1][23:0], words[i-1][31:24]};
+                for (j = 0; j < 4; j++) begin
+                    result = sbox[temp[j*8 +:4]][temp[(j*8+4) +:4]];
+                    temp[j*8 +:8] = result;
+                end
+                // XOR RCON (first byte)
+                temp[31:24] = temp[31:24] ^ rcon[i/8];
+                words[i] = words[i-8] ^ temp;
+            end 
+            else if (i % 8 == 4) begin
+                // SubWord
+                logic [31:0] temp = words[i-1];
+                for (j = 0; j < 4; j++) begin
+                    result = sbox[temp[j*8 +:4]][temp[(j*8+4) +:4]];
+                    temp[j*8 +:8] = result;
+                end
+                words[i] = words[i-8] ^ temp;
+            end 
+            else begin
+                // XOR with previous and 8th prior
+                words[i] = words[i-1] ^ words[i-8];
+            end
+        end
+
+        // Assign round keys
+        for (i = 0; i < `ROUND_KEYS_GEN; i++) begin
+            round_keys[i] = {words[i*4], words[i*4+1], words[i*4+2], words[i*4+3]};
+        end
+    end
+endmodule
 
