@@ -3,7 +3,7 @@ sv xil_defaultlib  --include "../../../../../encryption_2/encryption_2.srcs/sour
 "../../../../../encryption_2/encryption_2.srcs/sources_1/new/RCON.sv" \
 "../../../../../encryption_2/encryption_2.srcs/sources_1/new/sb.sv" \
 "../../../../../encryption_2/encryption_2.srcs/sources_1/new/aes_256_pipeline.sv" \
-"../../../../../../../../../roundkey_gen.sv" \
+"../../../../Encyption_intpipelined.srcs/sources_1/new/roundkey_gen.sv" \
 "../../../../../encryption_2/encryption_2.srcs/sim_1/new/aes_256_pipeline_tb.sv" \
 
 # compile glbl module

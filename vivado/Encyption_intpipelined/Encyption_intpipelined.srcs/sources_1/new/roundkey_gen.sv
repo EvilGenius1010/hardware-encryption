@@ -1,69 +1,86 @@
-import sbox_pkg::*;
-import rcon_pkg::*;
+`timescale 1ns / 1ps
+
 `include "CONSTANTS.vh"
+import rcon_pkg::*;
+import sbox_pkg::*; 
 
 module calculate_round_keys(
-    input logic[`KEY_WIDTH-1:0] key256,
+    input logic [`KEY_WIDTH-1:0] key256,
     output logic [`ROUND_KEYS_LEN-1:0] round_keys [`ROUND_KEYS_GEN-1:0]
 );
-    logic [31:0] words[`WORDS-1:0];
-    logic [7:0] temp[0:3];
-    
+    logic [`WORDS_LEN-1:0] words[`WORDS-1:0];
+    integer i, j;
+    logic [7:0] result;
+
     always_comb begin
-        // First 8 words directly from key (column by column)
-        for (int i = 0; i < 8; i = i + 1) begin 
-            // Extract bytes from key256 using indexing
-            words[i][31:24] = key256[255 - i * 32 +: 8]; // Byte 0 (MSB)
-            words[i][23:16] = key256[247 - i * 32 +: 8]; // Byte 1
-            words[i][15:8]  = key256[239 - i * 32 +: 8]; // Byte 2
-            words[i][7:0]   = key256[231 - i * 32 +: 8]; // Byte 3 (LSB)
+        // Initialize first 8 words from key - FIXED BYTE ORDER
+        for (i = 0; i < 8; i++) begin 
+            words[i] = key256[(`KEY_WIDTH-1-i*32) -: 32];
         end
-        
-        // Key Expansion Process
-        for (int i = 8; i < `WORDS; i = i + 1) begin
-            // Copy previous word
-            temp[0] = words[i-1][31:24];
-            temp[1] = words[i-1][23:16];
-            temp[2] = words[i-1][15:8];
-            temp[3] = words[i-1][7:0];
-            
+
+        // Key expansion for i >= 8
+        for (i = 8; i < 60; i++) begin
+            $display("i is %d",i);
             if (i % 8 == 0) begin
-                // RotWord: Circular left shift by 1 byte
-                logic [7:0] t = temp[0];
-                temp[0] = temp[1];
-                temp[1] = temp[2];
-                temp[2] = temp[3];
-                temp[3] = t;
-                
-                // SubWord: Apply S-Box to each byte
-                temp[0] = sbox[temp[0][7:4]][temp[0][3:0]];
-                temp[1] = sbox[temp[1][7:4]][temp[1][3:0]];
-                temp[2] = sbox[temp[2][7:4]][temp[2][3:0]];
-                temp[3] = sbox[temp[3][7:4]][temp[3][3:0]];
-                
-                // XOR with round constant - FIX: use i/8 instead of (i/8)-1
-                temp[0] = temp[0] ^ rcon[i/8];
-            end
-            else if (i % 8 == 4) begin
-                // SubWord for AES-256 (special case)
-                temp[0] = sbox[temp[0][7:4]][temp[0][3:0]];
-                temp[1] = sbox[temp[1][7:4]][temp[1][3:0]];
-                temp[2] = sbox[temp[2][7:4]][temp[2][3:0]];
-                temp[3] = sbox[temp[3][7:4]][temp[3][3:0]];
-            end
-            
-            // XOR with word from 8 positions back
-            words[i][31:24] = temp[0] ^ words[i-8][31:24];
-            words[i][23:16] = temp[1] ^ words[i-8][23:16];
-            words[i][15:8] = temp[2] ^ words[i-8][15:8];
-            words[i][7:0] = temp[3] ^ words[i-8][7:0];
-        end
+    // RotWord and SubWord
+    logic [31:0] temp;
+    logic[31:0] result2;
+    temp = {words[i-1] << 8} | {words[i-1] >> 24};
+//    $display("shifted value is %h and word is %h",temp,words[i-1]);
+
+    for (j = 0; j < 4; j++) begin
+    
+        result= sbox[temp[(31-j*8) -:4]][temp[(31-(j*8+4)) -:4]];
+        result2[(31-j*8) -:8]=result;
+//        $display("%h is row and %h is col and op is %h",temp[31-j*8 -:4],temp[(31-(j*8+4)) -:4],result);
         
-        // Assign round keys
-        for (int i = 0; i < `ROUND_KEYS_GEN; i = i + 1) begin
-            for (int j = 0; j < 4; j = j + 1) begin
-                round_keys[i][127-j*32 -: 32] = words[i*4+j];
+        // Store result in the same position it was extracted from
+//        result = temp[(31-j*8) -:8] ;
+    end
+//    $display("word after substn is %h",result2);
+                
+//                $display("rcon value is %h",rcon[(i/8)-1]);
+                result2[31:24] = result2[31:24]^rcon[(i/8)-1];
+//                $display("result2 is %h and is xor1",result2);
+                 words[i] = result2^ words[i-8];
+//                $display("result2 is %h and is after xor2",words[i]);
+                
+//                words[i] = words[1-8]^temp;
+                
+            end 
+            else if (i % 8 == 4) begin
+            
+            logic[31:0] result2;
+               for (j = 0; j < 4; j++) begin
+    
+        result= sbox[words[i-1][(31-j*8) -:4]][words[i-1][(31-(j*8+4)) -:4]];
+        result2[(31-j*8) -:8]=result;
+        $display("%h is row and %h is col and op is %h",words[i-1][31-j*8 -:4],words[i-1][(31-(j*8+4)) -:4],result);
+        
+        // Store result in the same position it was extracted from
+//        result = temp[(31-j*8) -:8] ;
+    end
+    $display("word after substn is %h",result2);
+                // XOR RCON (first byte)
+//                result = result ^ words[i-8];
+//                words[i] = {rcon[i/8],24'b000000000000000000000000} ^ result;
+                
+                
+                $display("result2 is %h and is xor1",result2);
+                 words[i] = result2^ words[i-8];
+                $display("result2 is %h and is after xor2",words[i]);
+                
+//                words[i] = words[1-8]^temp;
+            end 
+            else begin
+                // XOR with previous and 8th prior
+                words[i] = words[i-1] ^ words[i-8];
             end
+        end
+
+        // Assign round keys - FIXED WORD ORDER
+        for (i = 0; i < `ROUND_KEYS_GEN; i++) begin
+            round_keys[i] = {words[i*4], words[i*4+1], words[i*4+2], words[i*4+3]};
         end
     end
 endmodule
