@@ -1,0 +1,102 @@
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Pipeline stages monitoring:
+i is           8
+i is           9
+i is          10
+i is          11
+i is          12
+a is row and 5 is col and op is 06
+7 is row and 2 is col and op is 40
+c is row and 0 is col and op is ba
+9 is row and c is col and op is de
+word after substn is 0640bade
+result2 is 0640bade and is xor1
+result2 is 1651a8cd and is after xor2
+i is          13
+i is          14
+i is          15
+i is          16
+i is          17
+i is          18
+i is          19
+i is          20
+0 is row and 3 is col and op is 7b
+f is row and c is col and op is b0
+1 is row and 5 is col and op is 59
+6 is row and 7 is col and op is 85
+word after substn is 7bb05985
+result2 is 7bb05985 and is xor1
+result2 is 6de1f148 and is after xor2
+i is          21
+i is          22
+i is          23
+i is          24
+i is          25
+i is          26
+i is          27
+i is          28
+6 is row and c is col and op is 50
+d is row and 5 is col and op is 03
+5 is row and 9 is col and op is cb
+8 is row and b is col and op is 3d
+word after substn is 5003cb3d
+result2 is 5003cb3d and is xor1
+result2 is 3de23a75 and is after xor2
+i is          29
+i is          30
+i is          31
+i is          32
+i is          33
+i is          34
+i is          35
+i is          36
+c is row and 1 is col and op is 78
+8 is row and 7 is col and op is 17
+1 is row and c is col and op is 9c
+2 is row and f is col and op is 15
+word after substn is 78179c15
+result2 is 78179c15 and is xor1
+result2 is 45f5a660 and is after xor2
+i is          37
+i is          38
+i is          39
+i is          40
+i is          41
+i is          42
+i is          43
+i is          44
+d is row and 2 is col and op is b5
+6 is row and 1 is col and op is ef
+a is row and 7 is col and op is 5c
+d is row and f is col and op is 9e
+word after substn is b5ef5c9e
+result2 is b5ef5c9e and is xor1
+result2 is f01afafe and is after xor2
+i is          45
+i is          46
+i is          47
+i is          48
+i is          49
+i is          50
+i is          51
+i is          52
+5 is row and a is col and op is be
+7 is row and 2 is col and op is 40
+1 is row and c is col and op is 9c
+0 is row and a is col and op is 67
+word after substn is be409c67
+result2 is be409c67 and is xor1
+result2 is 4e5a6699 and is after xor2
+i is          53
+i is          54
+i is          55
+i is          56
+i is          57
+i is          58
+i is          59
+Time:                35000, valid_in: 1, valid_pipes: '{1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}, valid_out: 0
+Encryption complete! Ciphertext: 8ea2b7ca516745bfeafc49904b496089
+SUCCESS! Ciphertext matches expected value.
+Time:               185000, valid_in: 0, valid_pipes: '{1'b1,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}, valid_out: 1
+$finish called at time : 235 ns : File "D:/Hardware encryption project/hardware-encryption/vivado/hardware-encryption/vivado/encryption_2/encryption_2.srcs/sim_1/new/aes_256_pipeline_tb.sv" Line 73

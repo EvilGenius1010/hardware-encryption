@@ -22,9 +22,5 @@ package sbox_pkg;
         '{8'h8c, 8'ha1, 8'h89, 8'h0d, 8'hbf, 8'he6, 8'h42, 8'h68, 8'h41, 8'h99, 8'h2d, 8'h0f, 8'hb0, 8'h54, 8'hbb, 8'h16}
     };
 
-    // S-Box Lookup Function
-//    function automatic [7:0] sbox_lookup(input [3:0] row, input [3:0] col);
-//        return sbox[row][col];
-//    endfunction
-
+ 
 endpackage
